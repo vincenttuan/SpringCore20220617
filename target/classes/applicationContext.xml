@@ -38,4 +38,13 @@
 		<constructor-arg index="2" value="28" />
 	</bean>
 	
+	<!-- p 方法注入 -->
+	<bean id="author4" class="com.spring.core.session02.beans.Author"
+		  p:name="Helen" p:sex="F" p:age="32" />
+	
+	<!-- c 建構子注入 -->	  
+	<bean id="author5" class="com.spring.core.session02.beans.Author"
+		  c:name="Tom" c:sex="M" c:age="45" />
+	
+	
 </beans>
