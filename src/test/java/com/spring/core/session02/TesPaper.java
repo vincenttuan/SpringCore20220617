@@ -12,5 +12,8 @@ public class TesPaper {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 		//Paper paper1 = ctx.getBean(Paper.class);
 		//System.out.println(paper1);
+		
+		Paper paper2 = ctx.getBean("paper2", Paper.class);
+		System.out.println(paper2);
 	}
 }
