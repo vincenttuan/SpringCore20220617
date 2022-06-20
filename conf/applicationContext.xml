@@ -91,7 +91,7 @@
 	<bean id="paper3" p:id="303" autowire="byName" class="com.spring.core.session02.beans.WhiteA4" />
 	
 	<!-- construstor -->
-	
+	<bean id="paper4" p:id="404" autowire="constructor" class="com.spring.core.session02.beans.Paper" />
 	
 	
 </beans>
