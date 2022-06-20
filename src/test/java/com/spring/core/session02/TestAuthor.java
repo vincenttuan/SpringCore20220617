@@ -22,5 +22,10 @@ public class TestAuthor {
 		Author author2 = ctx.getBean("author2", Author.class);
 		// author2 在配置檔中已經有預設注入資料(利用方法注入)
 		System.out.println(author2);
+		
+		Author author3 = ctx.getBean("author3", Author.class);
+		// author3 在配置檔中已經有預設注入資料(利用建構子注入)
+		System.out.println(author3);
+		
 	}
 }
