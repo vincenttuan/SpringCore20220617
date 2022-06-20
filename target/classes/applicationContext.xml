@@ -15,6 +15,6 @@
 	
 	<bean id="hello" class="com.spring.core.session01.beans.Hello" />
 	
-	<bean id="lotto" scope="singleton" class="com.spring.core.session02.beans.Lotto"></bean>
+	<bean id="lotto" scope="prototype" class="com.spring.core.session02.beans.Lotto"></bean>
 	
 </beans>
