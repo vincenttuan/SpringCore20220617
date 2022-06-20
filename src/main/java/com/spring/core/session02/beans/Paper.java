@@ -2,8 +2,8 @@ package com.spring.core.session02.beans;
 
 public class Paper {
 	private Integer id; // 編號
-	private Color color;
-	private Size size;
+	private Color color; // 顏色
+	private Size size; // 尺寸
 	
 	public Paper() {
 		
