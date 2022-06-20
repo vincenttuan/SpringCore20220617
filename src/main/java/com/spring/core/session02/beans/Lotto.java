@@ -1,4 +1,4 @@
-package com.spring.core.session02;
+package com.spring.core.session02.beans;
 
 import java.util.Random;
 
