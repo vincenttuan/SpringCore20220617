@@ -71,7 +71,7 @@
 		  p:name="Python" p:price="300" p:author-ref="author4" />
 	
 	<bean id="book5" class="com.spring.core.session02.beans.Book"
-		  c:name="Python" c:price="300" c:author-ref="author5" />
+		  c:name="VB" c:price="250" c:author-ref="author5" />
 	
 	
 </beans>
