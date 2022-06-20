@@ -17,7 +17,7 @@ public class TestHello2 {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 		Hello hello = ctx.getBean(Hello.class);
 		System.out.println(hello);
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		Hello hello2 = ctx.getBean("hello", Hello.class);
 		System.out.println(hello2);
 		
