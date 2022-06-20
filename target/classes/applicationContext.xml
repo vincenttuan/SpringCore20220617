@@ -85,10 +85,12 @@
 	<!-- 
 	<bean id="paper1" p:id="101" autowire="byType" class="com.spring.core.session02.beans.Paper" />
 	-->
+	
 	<!-- byName -->
 	<bean id="paper2" p:id="202" autowire="byName" class="com.spring.core.session02.beans.Paper" />
 	<bean id="paper3" p:id="303" autowire="byName" class="com.spring.core.session02.beans.WhiteA4" />
 	
+	<!-- construstor -->
 	
 	
 	
