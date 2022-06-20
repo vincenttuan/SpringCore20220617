@@ -10,9 +10,16 @@ public class TestLotto {
 	@Test
 	public void test() {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
-		Lotto lotto1 = ctx.getBean(Lotto.class);
-		Lotto lotto2 = ctx.getBean("lotto", Lotto.class);
-		System.out.println(lotto1);
-		System.out.println(lotto2);
+		// 此用法僅限於在設定檔中只有一個Lotto配置下才可以使用
+		//Lotto lotto1 = ctx.getBean(Lotto.class);
+		//System.out.println(lotto1);
+		Lotto lotto_a = ctx.getBean("lotto", Lotto.class);
+		Lotto lotto_b = ctx.getBean("lotto", Lotto.class);
+		Lotto lotto_c = ctx.getBean("lotto2", Lotto.class);
+		Lotto lotto_d = ctx.getBean("lotto2", Lotto.class);
+		System.out.println(lotto_a);
+		System.out.println(lotto_b);
+		System.out.println(lotto_c);
+		System.out.println(lotto_d);
 	}
 }
