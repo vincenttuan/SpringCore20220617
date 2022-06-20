@@ -27,7 +27,9 @@ public class TestAuthor {
 		// author3 在配置檔中已經有預設注入資料(利用建構子注入)
 		System.out.println(author3);
 		
+		// 透過 p 方法賦值注入資料
 		Author author4 = ctx.getBean("author4", Author.class);
+		// 透過 c 建構子賦值注入資料
 		Author author5 = ctx.getBean("author5", Author.class);
 		System.out.println(author4);
 		System.out.println(author5);
