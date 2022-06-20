@@ -4,6 +4,7 @@ public class WhiteA4 {
 	private Integer id; // 編號
 	private Color white; // 白顏色
 	private Size a4; // A4尺寸
+	
 	public Integer getId() {
 		return id;
 	}
