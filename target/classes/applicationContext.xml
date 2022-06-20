@@ -19,6 +19,17 @@
 	<bean id="lotto2" scope="singleton" class="com.spring.core.session02.beans.Lotto" />
 	
 	<bean id="author1" class="com.spring.core.session02.beans.Author" />
-	
+	<bean id="author2" class="com.spring.core.session02.beans.Author">
+		<!--  方法注入 -->
+		<property name="name">
+			<value>Vincent</value>
+		</property>
+		<property name="sex">
+			<value>M</value>
+		</property>
+		<property name="age">
+			<value>30</value>
+		</property>
+	</bean>
 	
 </beans>
