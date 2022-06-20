@@ -17,5 +17,8 @@ public class TestAuthor {
 		author1.setSex('M');
 		author1.setAge(30);
 		System.out.println(author1);
+		
+		Author author2 = ctx.getBean("author2", Author.class);
+		System.out.println(author2);
 	}
 }
