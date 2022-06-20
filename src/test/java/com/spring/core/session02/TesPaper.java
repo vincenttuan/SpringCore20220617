@@ -16,7 +16,11 @@ public class TesPaper {
 		
 		Paper paper2 = ctx.getBean("paper2", Paper.class);
 		System.out.println(paper2);
+		
 		WhiteA4 paper3 = ctx.getBean("paper3", WhiteA4.class);
 		System.out.println(paper3);
+		
+		Paper paper4 = ctx.getBean("paper4", Paper.class);
+		System.out.println(paper4);
 	}
 }
