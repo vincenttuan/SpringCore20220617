@@ -109,5 +109,16 @@
 		  p:credit="${clazz.credit}"	 
 		  class="com.spring.core.session03.beans.Clazz" />
 	
+	<bean id="clazz2"
+		  p:id="2"
+		  p:name="English"
+		  p:credit="2"	 
+		  class="com.spring.core.session03.beans.Clazz"/>
+	
+	<bean id="clazz3"
+		  p:id="3"
+		  p:name="Math"
+		  p:credit="1"	 
+		  class="com.spring.core.session03.beans.Clazz"/>
 	
 </beans>
