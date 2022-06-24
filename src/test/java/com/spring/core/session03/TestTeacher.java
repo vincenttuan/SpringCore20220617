@@ -26,5 +26,8 @@ public class TestTeacher {
 				IntSummaryStatistics stat = s.stream().mapToInt(c -> c.getCredit()).summaryStatistics();
 				System.out.println(stat);
 			});
+		System.out.println("----------------------------");
+		Teacher teacher2 = ctx.getBean("teacher2", Teacher.class);
+		System.out.println(teacher2);
 	}
 }
