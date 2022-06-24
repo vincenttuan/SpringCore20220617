@@ -209,6 +209,12 @@
 	</util:map>
 	
 	<!-- 講師配置 2 -->
-	
+	<bean id="teacher2" 
+		  p:id="202"
+		  p:name="Jean"
+		  p:students-ref="students"
+		  p:subjects-ref="subjects"
+		  p:salary-ref="salary"
+		  class="com.spring.core.session03.beans.Teacher" />
 	
 </beans>
