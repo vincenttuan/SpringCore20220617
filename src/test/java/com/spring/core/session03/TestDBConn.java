@@ -13,5 +13,9 @@ public class TestDBConn {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 		DBConn dbConn = ctx.getBean("dbconn", DBConn.class);
 		System.out.println(dbConn);
+		dbConn.query();
+		dbConn.query();
+		dbConn.query();
+		((ClassPathXmlApplicationContext)ctx).close();
 	}
 }
