@@ -93,5 +93,19 @@
 	<!-- construstor -->
 	<bean id="paper4" p:id="404" autowire="constructor" class="com.spring.core.session02.beans.Paper" />
 	
+	<!-- 引用外部資源 part I -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="data.properties" />
+	</bean>
+	
+	<!-- 引用外部資源 part II -->
+	
+	<!-- 建立 Clazz 實例並使用外部資源來注入物件屬性資料 -->
+	<bean id="clazz1"
+		  p:id="1"
+		  p:name="${clazz.name}"
+		  p:credit="${clazz.credit}"	 
+		  class="com.spring.core.session03.beans.Clazz" />
+	
 	
 </beans>
