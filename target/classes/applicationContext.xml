@@ -219,6 +219,8 @@
 	
 	<!-- init-method, destroy-method 配置 -->
 	<bean id="dbconn"
-		class="com.spring.core.session03.beans.DBConn" />
+		  init-method="init"
+		  destroy-method="destroy"
+		  class="com.spring.core.session03.beans.DBConn" />
 	
 </beans>
