@@ -223,4 +223,6 @@
 		  destroy-method="destroy"
 		  class="com.spring.core.session03.beans.DBConn" />
 	
+	<!-- 利用 BeanFactory 建立實體 -->
+	<bean id="carFactory" class="com.spring.core.session03.beans.CarFactory"></bean>
 </beans>
