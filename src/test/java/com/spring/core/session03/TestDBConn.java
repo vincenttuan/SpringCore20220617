@@ -5,12 +5,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.spring.core.session03.beans.Clazz;
+import com.spring.core.session03.beans.DBConn;
 
 public class TestDBConn {
 	@Test
 	public void test() {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
-		Clazz clazz = ctx.getBean("clazz1", Clazz.class);
-		System.out.println(clazz);
+		DBConn dbConn = ctx.getBean("dbconn", DBConn.class);
+		System.out.println(dbConn);
 	}
 }
