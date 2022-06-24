@@ -1,25 +1,25 @@
 package com.spring.core.session03.beans;
 
+import java.util.Random;
+
 import org.springframework.beans.factory.FactoryBean;
 
 public class CarFactory implements FactoryBean<Car> {
 
 	@Override
 	public Car getObject() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		Random random = new Random();
+		return new Car("保時捷", random.nextInt(600_0000));
 	}
 
 	@Override
 	public Class<?> getObjectType() {
-		// TODO Auto-generated method stub
-		return null;
+		return Car.class;
 	}
 
 	@Override
 	public boolean isSingleton() {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 	
 }
