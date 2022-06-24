@@ -94,11 +94,13 @@
 	<bean id="paper4" p:id="404" autowire="constructor" class="com.spring.core.session02.beans.Paper" />
 	
 	<!-- 引用外部資源 part I -->
+	<!-- 
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="location" value="data.properties" />
 	</bean>
-	
+	-->
 	<!-- 引用外部資源 part II -->
+	<context:property-placeholder location="data.properties" />
 	
 	<!-- 建立 Clazz 實例並使用外部資源來注入物件屬性資料 -->
 	<bean id="clazz1"
