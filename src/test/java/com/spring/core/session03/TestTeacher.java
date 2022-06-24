@@ -13,5 +13,7 @@ public class TestTeacher {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 		Teacher teacher1 = ctx.getBean("teacher1", Teacher.class);
 		System.out.println(teacher1);
+		// 請問 teacher1 的學生每個人平均是幾學分 ?
+		
 	}
 }
