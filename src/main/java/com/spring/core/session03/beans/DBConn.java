@@ -1,4 +1,4 @@
-package com.spring.core.session03;
+package com.spring.core.session03.beans;
 
 public class DBConn {
 	public void init() {
