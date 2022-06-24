@@ -159,9 +159,24 @@
 		</property>
 		
 		<!-- List 配置 -->
+		<property name="subjects">
+			<list>
+				<value>Program</value>
+				<value>English</value>
+			</list>
+		</property>
 		
-		
-		<!-- Map 配置 --> 
+		<!--  Map 配置 (每一個元素是一個 entry -> key / value) -->
+		<property name="salary">
+			<map>
+				<entry key="base">
+					<value>50000</value>
+				</entry>
+				<entry key="addition">
+					<value>20000</value>
+				</entry>
+			</map>
+		</property>
 		
 		 
 	</bean>
