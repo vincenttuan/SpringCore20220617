@@ -121,4 +121,18 @@
 		  p:credit="1"	 
 		  class="com.spring.core.session03.beans.Clazz"/>
 	
+	<!-- 學生配置 1 -->
+	<bean id="student1" p:id="1" p:name="John" 
+		  class="com.spring.core.session03.beans.Student">
+		<!-- Set 集合配置 -->  
+		<property name="clazzs">
+			<set>
+				<ref bean="clazz1" />
+				<ref bean="clazz2" />
+				<ref bean="clazz3" />
+			</set>
+		</property>
+	</bean>
+	
+	
 </beans>
