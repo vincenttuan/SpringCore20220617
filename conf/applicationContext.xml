@@ -146,4 +146,27 @@
 		</property>
 	</bean>
 	
+	<!-- 講師配置 1 -->
+	<bean id="teacher1" p:id="101" p:name="Bob"
+		  class="com.spring.core.session03.beans.Teacher">
+		
+		<!-- Set 配置 -->
+		<property name="students">
+			<set>
+				<ref bean="student1" />
+				<ref bean="student2" />
+			</set>
+		</property>
+		
+		<!-- List 配置 -->
+		
+		<!-- Map 配置 --> 
+		
+		 
+	</bean>
+	
+	
+	
+	<!-- 講師配置 2 -->
+	
 </beans>
