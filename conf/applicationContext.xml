@@ -134,5 +134,16 @@
 		</property>
 	</bean>
 	
+	<!-- 學生配置 2 -->
+	<bean id="student2" p:id="2" p:name="Mary" 
+		  class="com.spring.core.session03.beans.Student">
+		<!-- Set 集合配置 -->  
+		<property name="clazzs">
+			<set>
+				<ref bean="clazz1" />
+				<ref bean="clazz3" />
+			</set>
+		</property>
+	</bean>
 	
 </beans>
