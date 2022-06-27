@@ -16,19 +16,24 @@ public class User {
 	@Value("${user.username}")
 	private String username; // 姓名
 	
-	@Value(value = "18")
+	//@Value(value = "18")
+	@Value("${user.age}")
 	private Integer age; // 年齡
 	
-	@Value(value = "#{${nickname: {'foo', 'bar'}}}") // 使用 Spring EL
+	//@Value(value = "#{${nickname: {'foo', 'bar'}}}") // 使用 Spring EL
+	@Value("${user.nickname}")
 	private String[] nickname; // 暱稱
 	
-	@Value(value = "#{${subjects: {'Java', 'Math'}}}")
+	//@Value(value = "#{${subjects: {'Java', 'Math'}}}")
+	@Value("${user.subjects}")
 	private Set<String> subjects; // 專長科目
 	
-	@Value(value = "#{${scores: {100, 90}}}")
+	//@Value(value = "#{${scores: {100, 90}}}")
+	@Value("#{'${user.scores}'.split(',')}")
 	private List<Integer> scores; // 成績
 	
-	@Value(value = "#{${hobbies: {'h1': 'Car', 'h2': 'Game'}}}")
+	//@Value(value = "#{${hobbies: {'h1': 'Car', 'h2': 'Game'}}}")
+	@Value("#{${user.hobbies}}")
 	private Map<String, String> hobbies; // 興趣
 
 	public String getUsername() {
