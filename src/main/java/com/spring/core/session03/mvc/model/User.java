@@ -6,11 +6,14 @@ import java.util.Map;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
+@PropertySource("classpath:user.properties")
 public class User {
-	@Value(value = "John")
+	//@Value(value = "John")
+	@Value("${user.username}")
 	private String username; // 姓名
 	
 	@Value(value = "18")
