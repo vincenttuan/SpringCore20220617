@@ -9,6 +9,8 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public void createUser(User user) {
+		// 存入資料庫程序
+		// 略 ...
 		System.out.println("Repository - Create user : " + user);
 		
 	}

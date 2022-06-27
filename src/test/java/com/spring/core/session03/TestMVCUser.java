@@ -13,6 +13,7 @@ public class TestMVCUser {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 		User user = ctx.getBean("user", User.class);
 		System.out.println(user);
+		// 表單
 		
 		// 將 user 加入到資料庫中
 		// UserController -> UserService -> UserDao

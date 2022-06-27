@@ -14,6 +14,9 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public void addUser(User user) {
+		// 驗證 user 物件
+		// 略 ...
+		// 驗證通過
 		System.out.println("Service - add user : " + user);
 		userDao.createUser(user);
 	}
