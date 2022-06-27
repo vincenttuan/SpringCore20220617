@@ -16,7 +16,8 @@ public class PersonProxy implements Person {
 		System.out.println("戴口罩");
 		// 代理執行業務方法
 		person.work();
-		
+		// 公用邏輯
+		System.out.println("脫口罩");
 	}
 	
 	
