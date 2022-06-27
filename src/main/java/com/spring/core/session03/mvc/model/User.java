@@ -5,20 +5,27 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class User {
+	@Value(value = "John")
 	private String username; // 姓名
 	
+	@Value(value = "18")
 	private Integer age; // 年齡
 	
+	@Value(value = "#{${nickname:{'foo', 'bar'}}}") // 使用 Spring EL
 	private String[] nickname; // 暱稱
 	
+	@Value(value = "#{${subjects: {'Java', 'Math'}}}")
 	private Set<String> subjects; // 專長科目
 	
+	@Value(value = "#{${scores: {100, 90}}}")
 	private List<Integer> scores; // 成績
 	
+	@Value(value = "#{${hobbies: {'h1': 'Car', 'h2': 'Game'}}}")
 	private Map<String, String> hobbies; // 興趣
 
 	public String getUsername() {
