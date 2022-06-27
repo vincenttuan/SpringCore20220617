@@ -16,7 +16,7 @@ public class User {
 	@Value(value = "18")
 	private Integer age; // 年齡
 	
-	@Value(value = "#{${nickname:{'foo', 'bar'}}}") // 使用 Spring EL
+	@Value(value = "#{${nickname: {'foo', 'bar'}}}") // 使用 Spring EL
 	private String[] nickname; // 暱稱
 	
 	@Value(value = "#{${subjects: {'Java', 'Math'}}}")
