@@ -8,7 +8,6 @@ import com.spring.core.session01.beans.Hello;
 
 // Java 配置
 @Configuration
-//@ComponentScan("com.spring.core.session01.beans.conf")
 public class SpringConfig {
 	
 	@Bean(name = "hello")
