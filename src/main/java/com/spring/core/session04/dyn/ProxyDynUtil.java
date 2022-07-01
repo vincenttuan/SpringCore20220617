@@ -23,9 +23,19 @@ public class ProxyDynUtil {
 		InvocationHandler invocationHandler = (proxy, method, args) -> {
 			Object result = null;
 			// Before: 前置通知
-			System.out.println("Before: 前置通知: 準備開始計算");
-			// 調用業務方法
-			result = method.invoke(object, args);
+			//System.out.println("Before: 前置通知: 準備開始計算");
+			MyLogger.before(object.getClass(), method.getName(), args);
+			try {
+				// 調用業務方法
+				result = method.invoke(object, args);
+			} catch (Exception e) {
+				// Exception: 例外異常通知
+				MyLogger.throwing(object.getClass(), e.getMessage());
+			} finally {
+				// End: 後置通知
+				MyLogger.end(object.getClass(), method.getName(), result);
+			}
+			
 			return result;
 		};
 		proxyObj = Proxy.newProxyInstance(loader, interfaces, invocationHandler);
