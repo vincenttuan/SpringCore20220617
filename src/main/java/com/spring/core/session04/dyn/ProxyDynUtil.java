@@ -23,7 +23,7 @@ public class ProxyDynUtil {
 		InvocationHandler invocationHandler = (proxy, method, args) -> {
 			Object result = null;
 			// Before: 前置通知
-			System.out.println("Before: 前置通知");
+			System.out.println("Before: 前置通知: 準備開始計算");
 			// 調用業務方法
 			result = method.invoke(object, args);
 			return result;
