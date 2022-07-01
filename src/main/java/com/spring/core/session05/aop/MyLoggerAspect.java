@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class MyLoggerAspect {
 	// 前置通知 Advice
 	//@Before(value = "execution(public Integer com.spring.core.session05.aop.MathCalcImpl.add(Integer, Integer))") // 切入點表達式 Spring EL : execution(..)
-	@Before(value = "execution(public Integer com.spring.core.session05.aop.MathCalcImpl.*(..))") // 切入點表達式 Spring EL : execution(..)
+	@Before(value = "execution(* com.spring.core.session05.aop.MathCalcImpl.*(..))") // * 表示任意方法, .. 表示0~多任意參數
 	public void beforeAdvice(JoinPoint joinPoint) { // joinPoint 連接點
 		String methodName = joinPoint.getSignature().getName(); // 取得連接點的方法簽章名稱
 		Object[] args = joinPoint.getArgs(); // 方法參數
