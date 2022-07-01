@@ -30,7 +30,7 @@ public class ProxyDynUtil {
 				result = method.invoke(object, args);
 			} catch (Exception e) {
 				// Exception: 例外異常通知
-				MyLogger.throwing(object.getClass(), e.getMessage());
+				MyLogger.throwing(object.getClass(), e);
 			} finally {
 				// End: 後置通知
 				MyLogger.end(object.getClass(), method.getName(), result);

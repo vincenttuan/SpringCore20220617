@@ -12,10 +12,11 @@ public class ProxyDynDemo {
 	@Test
 	public void test() {
 		Calc calc = (Calc)new ProxyDynUtil(new CalcImpl()).getProxy();
-		System.out.println(calc.add(20, 10));
-		System.out.println(calc.div(20, 10));
+		//System.out.println(calc.add(20, 10));
+		//System.out.println(calc.div(20, 10));
+		System.out.println(calc.div(20, 0));
 		
-		Person man = (Person)new ProxyDynUtil(new Man()).getProxy();
-		man.work();
+		//Person man = (Person)new ProxyDynUtil(new Man()).getProxy();
+		//man.work();
 	}
 }
