@@ -2,6 +2,7 @@ package com.spring.core.session05.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -34,12 +35,21 @@ public class MyLoggerAspect {
 		System.out.printf("前置通知 - 方法名稱: %s 方法參數: %s\n", methodName, args);
 	}
 	
-	// 後置通知 Advice: 執行在連接點呼叫完之後
+	// 後置通知 Advice: 執行在連接點呼叫完之後, 在 SpringAOP 機制上會被配置在 finally 區段中
 	@After(value = "pt()")
 	public void afterAdvice(JoinPoint joinPoint) {
 		String methodName = joinPoint.getSignature().getName(); // 取得連接點的方法簽章名稱
 		System.out.printf("後置通知 - 方法名稱: %s\n", methodName);
 	}
+	
+	// 返回通知 Advice: 可以設定 returning 來接收方法回傳值
+	@AfterReturning(value = "pt()", returning = "result") // 設定將方法的回傳值放到 result 變數中
+	public void afterReturningAdvice(JoinPoint joinPoint, Object result) {
+		String methodName = joinPoint.getSignature().getName(); // 取得連接點的方法簽章名稱
+		System.out.printf("返回通知 - 方法名稱: %s\n 回傳值: %s", methodName, result);
+	}
+	
+	
 	
 	
 }
