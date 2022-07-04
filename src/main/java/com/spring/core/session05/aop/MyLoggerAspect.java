@@ -80,7 +80,7 @@ public class MyLoggerAspect {
 			System.out.printf("環繞通知: 返回通知 - 方法名稱: %s 返回值: %s\n", methodName, result);
 		} catch (Throwable e) {
 			// 4. 異常通知
-			System.out.printf("環繞通知: 異常通知 - 方法名稱: %s 例外: %s\n", methodName, result);
+			System.out.printf("環繞通知: 異常通知 - 方法名稱: %s 例外: %s\n", methodName, e);
 		} finally {
 			// 5. 後置通知
 			System.out.printf("環繞通知: 後置通知 - 方法名稱: %s\n", methodName);
