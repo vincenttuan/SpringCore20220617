@@ -7,6 +7,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import com.spring.core.session05.aop_lab.Audience;
 import com.spring.core.session05.aop_lab.Dancer;
+import com.spring.core.session05.aop_lab.Introducter;
 import com.spring.core.session05.aop_lab.Performance;
 
 @Configuration // 此為 Java 配置檔
@@ -24,5 +25,10 @@ public class AOPConfig {
 	@Bean
 	public Audience audience() {
 		return new Audience();
+	}
+	
+	@Bean
+	public Introducter getIntroducter() {
+		return new Introducter();
 	}
 }
