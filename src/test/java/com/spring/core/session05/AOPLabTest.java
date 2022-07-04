@@ -15,6 +15,14 @@ public class AOPLabTest {
 		// Java 配置
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(AOPConfig.class);
 		Performance dancer = ctx.getBean("dancer", Performance.class);
-		dancer.perform();
+		try {
+			dancer.perform(); // 舞者表演
+		} catch (Exception e) {
+			System.out.println(e); // 意外發生
+			// 舞者轉換跑道
+			// 改行去唱歌
+			// dancer 透過 introducter(經紀人) 轉換跑道
+		}
+		
 	}
 }
