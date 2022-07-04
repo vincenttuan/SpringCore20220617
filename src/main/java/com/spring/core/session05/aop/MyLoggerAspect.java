@@ -1,6 +1,7 @@
 package com.spring.core.session05.aop;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -32,4 +33,12 @@ public class MyLoggerAspect {
 		Object[] args = joinPoint.getArgs(); // 方法參數
 		System.out.printf("前置通知 - 方法名稱: %s 方法參數: %s\n", methodName, args);
 	}
+	
+	// 後置通知 Advice: 執行在連接點呼叫完之後
+	@After(value = "pt()")
+	public void afterAdvice() {
+		System.out.println("後置通知");
+	}
+	
+	
 }
