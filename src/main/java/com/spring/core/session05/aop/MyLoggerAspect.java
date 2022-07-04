@@ -36,8 +36,9 @@ public class MyLoggerAspect {
 	
 	// 後置通知 Advice: 執行在連接點呼叫完之後
 	@After(value = "pt()")
-	public void afterAdvice() {
-		System.out.println("後置通知");
+	public void afterAdvice(JoinPoint joinPoint) {
+		String methodName = joinPoint.getSignature().getName(); // 取得連接點的方法簽章名稱
+		System.out.printf("後置通知 - 方法名稱: %s\n", methodName);
 	}
 	
 	
