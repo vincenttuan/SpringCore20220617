@@ -5,6 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
+import com.spring.core.session05.aop_lab.Audience;
 import com.spring.core.session05.aop_lab.Dancer;
 import com.spring.core.session05.aop_lab.Performance;
 
@@ -18,5 +19,10 @@ public class AOPConfig {
 	public Performance dancer() {
 		Dancer dancer = new Dancer();
 		return dancer;
+	}
+	
+	@Bean
+	public Audience audience() {
+		return new Audience();
 	}
 }
