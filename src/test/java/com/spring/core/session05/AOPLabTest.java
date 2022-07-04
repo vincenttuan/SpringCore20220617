@@ -8,6 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.spring.core.session05.aop.MathCalc;
 import com.spring.core.session05.aop.MathCalcImpl;
 import com.spring.core.session05.aop_lab.Performance;
+import com.spring.core.session05.aop_lab.Singer;
 
 public class AOPLabTest {
 	@Test
@@ -22,6 +23,9 @@ public class AOPLabTest {
 			// 舞者轉換跑道
 			// 改行去唱歌
 			// dancer 透過 introducter(經紀人) 轉換跑道
+			System.out.println("舞者轉歌者");
+			Singer singer = (Singer) dancer;
+			singer.sing();
 		}
 		
 	}
