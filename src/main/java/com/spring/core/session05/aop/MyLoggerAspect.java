@@ -25,7 +25,8 @@ public class MyLoggerAspect {
 	//@Before(value = "execution(public * com.spring.core.session05.aop.MathCalcImpl.*(..))")
 	//@Before(value = "execution(* com.spring.core.session05.aop.*.*(..))") // 在指定套件下之任意類 + 任意方法
 	//@Before(value = "execution(* *(..))")  // 全部攔截
-	@Before(value = "pt()")
+	//@Before(value = "pt()")
+	@Before(value = "pt() && !pt2()")
 	public void beforeAdvice(JoinPoint joinPoint) { // joinPoint 連接點
 		String methodName = joinPoint.getSignature().getName(); // 取得連接點的方法簽章名稱
 		Object[] args = joinPoint.getArgs(); // 方法參數
