@@ -59,5 +59,4 @@ public class MyLoggerAspect {
 		System.out.printf("異常通知 - 方法名稱: %s 例外: %s\n", methodName, ex);
 	}
 	
-	
 }
