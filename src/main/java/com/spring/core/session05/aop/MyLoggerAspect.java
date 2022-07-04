@@ -27,8 +27,8 @@ public class MyLoggerAspect {
 	//@Before(value = "execution(public * com.spring.core.session05.aop.MathCalcImpl.*(..))")
 	//@Before(value = "execution(* com.spring.core.session05.aop.*.*(..))") // 在指定套件下之任意類 + 任意方法
 	//@Before(value = "execution(* *(..))")  // 全部攔截
-	//@Before(value = "pt()")
-	@Before(value = "pt() && !pt2()") // 支援 &&, ||, !
+	//@Before(value = "pt() && !pt2()") // 支援 &&, ||, !
+	@Before(value = "pt()")
 	public void beforeAdvice(JoinPoint joinPoint) { // joinPoint 連接點
 		String methodName = joinPoint.getSignature().getName(); // 取得連接點的方法簽章名稱
 		Object[] args = joinPoint.getArgs(); // 方法參數
@@ -46,7 +46,7 @@ public class MyLoggerAspect {
 	@AfterReturning(value = "pt()", returning = "result") // 設定將方法的回傳值放到 result 變數中
 	public void afterReturningAdvice(JoinPoint joinPoint, Object result) {
 		String methodName = joinPoint.getSignature().getName(); // 取得連接點的方法簽章名稱
-		System.out.printf("返回通知 - 方法名稱: %s\n 回傳值: %s", methodName, result);
+		System.out.printf("返回通知 - 方法名稱: %s 回傳值: %s\n", methodName, result);
 	}
 	
 	
