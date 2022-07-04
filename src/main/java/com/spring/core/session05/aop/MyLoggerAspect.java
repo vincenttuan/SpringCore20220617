@@ -3,6 +3,7 @@ package com.spring.core.session05.aop;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -36,6 +37,7 @@ public class MyLoggerAspect {
 	}
 	
 	// 後置通知 Advice: 執行在連接點呼叫完之後, 在 SpringAOP 機制上會被配置在 finally 區段中
+	// 無論目標方法是否有例外發生都會執行後置通知
 	@After(value = "pt()")
 	public void afterAdvice(JoinPoint joinPoint) {
 		String methodName = joinPoint.getSignature().getName(); // 取得連接點的方法簽章名稱
@@ -43,13 +45,19 @@ public class MyLoggerAspect {
 	}
 	
 	// 返回通知 Advice: 可以設定 returning 來接收方法回傳值
+	// 若目標方法發生例外則不會執行返回通知
 	@AfterReturning(value = "pt()", returning = "result") // 設定將方法的回傳值放到 result 變數中
 	public void afterReturningAdvice(JoinPoint joinPoint, Object result) {
 		String methodName = joinPoint.getSignature().getName(); // 取得連接點的方法簽章名稱
 		System.out.printf("返回通知 - 方法名稱: %s 回傳值: %s\n", methodName, result);
 	}
 	
-	
+	// 異常通知 Advice: 可以設定 throwing 來接收異常物件
+	@AfterThrowing(value = "pt()", throwing = "ex")
+	public void afterThrowingAdvice(JoinPoint joinPoint, Throwable ex) {
+		String methodName = joinPoint.getSignature().getName(); // 取得連接點的方法簽章名稱
+		System.out.printf("異常通知 - 方法名稱: %s 例外: %s\n", methodName, ex);
+	}
 	
 	
 }
