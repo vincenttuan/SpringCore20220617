@@ -76,5 +76,11 @@ from emp e left join job j on e.eid = j.eid
 group by e.ename
 order by e.ename;
 
+-- 沒有工作的員工
+select e.ename
+from emp e left join job j on e.eid = j.eid 
+where j.eid is null;
+
+
 </pre>
 
