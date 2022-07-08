@@ -81,6 +81,14 @@ select e.ename
 from emp e left join job j on e.eid = j.eid 
 where j.eid is null;
 
+-- 沒有員工的工作
+select j.jname
+from emp e right join job j on e.eid = j.eid 
+where j.eid  is null;
+
+select j.jname
+from job j
+where j.eid is null;
 
 </pre>
 
