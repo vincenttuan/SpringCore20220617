@@ -1,6 +1,6 @@
 # SpringCore20220617
 巨匠東認 SpringCore 20220617
-
+<pre>
 -- 建立 Emp 資料表
 create table if not exists emp (
 	eid int not null auto_increment, -- 主鍵
@@ -18,4 +18,6 @@ create table if not exists job (
 	primary key(jid),
 	foreign key(eid) references emp(eid) -- 外鍵關聯
 );
+
+</pre>
 
