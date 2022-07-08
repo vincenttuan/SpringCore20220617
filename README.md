@@ -19,6 +19,7 @@ create table if not exists job (
 	foreign key(eid) references emp(eid) -- 外鍵關聯
 );
 
+-- 建立初始數據
 insert into emp(ename, age) values ('A01', 21);
 insert into emp(ename, age) values ('A02', 22);
 insert into emp(ename, age) values ('A03', 23);
