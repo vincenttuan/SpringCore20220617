@@ -51,5 +51,30 @@ insert into job(jname, eid) values ('jobL', 3);
 insert into job(jname) values ('jobM');
 insert into job(jname) values ('jobN');
 
+-- 每一個有工作指派的員工之工作列表
+select e.ename , j.jname 
+from emp e, job j
+where e.eid = j.eid 
+order by e.ename;
+
+-- 每一個員工有幾項工作(交集) - 1 ?
+select e.ename, count(j.jname) as total
+from emp e inner join job j on e.eid = j.eid 
+group by e.ename
+order by e.ename;
+
+-- 每一個員工有幾項工作(交集) - 2 ?
+select e.ename, count(j.jname) as total
+from emp e, job j
+where e.eid = j.eid 
+group by e.ename
+order by e.ename;
+
+-- 每一個員工有幾項工作(left join 向左關聯) - 3 ?
+select e.ename, count(j.jname) as total
+from emp e left join job j on e.eid = j.eid 
+group by e.ename
+order by e.ename;
+
 </pre>
 
