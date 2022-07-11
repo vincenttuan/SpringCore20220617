@@ -9,8 +9,9 @@ public class Emp {
 	private String ename;
 	private Integer age;
 	private Date createtime;
+	
 	// 關聯關係
-	private List<Job> jobs;
+	private List<Job> jobs; // 一個 emp 對應 0~*個 job
 	
 	public Emp() {
 		
