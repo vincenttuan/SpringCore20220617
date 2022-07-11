@@ -32,5 +32,8 @@ public class TemplateTest1 {
 		
 		List<Emp> emps2 = empDao.queryAllEmps();
 		System.out.println(emps2);
+		
+		emps2 = empDao.queryAllEmps2();
+		System.out.println(emps2);
 	}
 }
