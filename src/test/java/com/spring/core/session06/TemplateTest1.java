@@ -21,5 +21,7 @@ public class TemplateTest1 {
 		EmpDao empDao = ctx.getBean("empDao", EmpDao.class);
 		List<Map<String, Object>> emps = empDao.queryAll();
 		System.out.println(emps);
+		// 如何取得 eid = 2 的員工姓名 ? (請使用 java 8 stream)
+		
 	}
 }
