@@ -73,7 +73,7 @@ public class EmpDao {
 	// 批次多筆新增 I
 	public int[] batchAdd1(List<Object[]> rows) {
 		String sql = "insert into emp(ename, age) values(?, ?)";
-		return jdbcTemplate.batchUpdate(sql);
+		return jdbcTemplate.batchUpdate(sql, rows);
 	}
 	
 	// 批次多筆新增 II
