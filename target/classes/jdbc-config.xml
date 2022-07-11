@@ -49,4 +49,12 @@
 		<constructor-arg ref="dataSource" />
 	</bean>
 	
+	<!-- 配置事務管理器 transaction manager -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- 開啟事務的註解@驅動, 對事物相關的註解@進行掃描與解析 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
 </beans>
