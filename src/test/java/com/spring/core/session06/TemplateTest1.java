@@ -22,6 +22,11 @@ public class TemplateTest1 {
 		List<Map<String, Object>> emps = empDao.queryAll();
 		System.out.println(emps);
 		// 如何取得 eid = 2 的員工姓名 ? (請使用 java 8 stream)
-		
+		String ename = emps.stream()
+				.filter(e -> e.get("eid").toString().equals("2"))
+				.findFirst()
+				.get()
+				.get("ename").toString();
+		System.out.println(ename);
 	}
 }
