@@ -99,6 +99,17 @@ public class EmpDao {
 		return jdbcTemplate.batchUpdate(sql, setter);
 	}
 	
+	// 修改
+	public int updateById(Integer eid, String ename, Integer age) {
+		String sql = "update emp set ename=?, age=? where eid=?";
+		return jdbcTemplate.update(sql, ename, age, eid);
+	}
+	
+	// 刪除
+	public int deleteById(Integer eid) {
+		String sql = "delete from emp where eid=?";
+		return jdbcTemplate.update(sql, eid);
+	}
 	
 	
 }
