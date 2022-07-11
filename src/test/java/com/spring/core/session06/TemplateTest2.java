@@ -18,7 +18,10 @@ public class TemplateTest2 {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("jdbc-config.xml");
 		EmpDao empDao = ctx.getBean("empDao", EmpDao.class);
 		// 測試單筆新增 I
-		int rowcount = empDao.addOne1("test1", 18);
+		//int rowcount = empDao.addOne1("test1", 18);
+		//System.out.println(rowcount);
+		// 測試單筆新增 II
+		int rowcount = empDao.addOne2("test2", 19);
 		System.out.println(rowcount);
 		
 	}

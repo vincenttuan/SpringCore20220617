@@ -61,7 +61,7 @@ public class EmpDao {
 	}
 	
 	// 單筆新增 II
-	public int assOne2(String ename, Integer age) {
+	public int addOne2(String ename, Integer age) {
 		String sql = "insert into emp(ename, age) values(:ename, :age)";
 		MapSqlParameterSource params = new MapSqlParameterSource()
 				.addValue("ename", ename)
