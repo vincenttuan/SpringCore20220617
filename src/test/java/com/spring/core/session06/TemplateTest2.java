@@ -45,7 +45,16 @@ public class TemplateTest2 {
 		System.out.println(Arrays.toString(rowcounts));
 		*/
 		
-		System.out.println(empDao.getEmpById(1));
+		// 修改
+		//int rowcount = empDao.updateById(1, "A01", 21);
+		//System.out.println(rowcount);
+		
+		// 刪除
+		int rowcount = empDao.deleteById(14);
+		System.out.println(rowcount);
+		
+		// 單筆查詢
+		//System.out.println(empDao.getEmpById(1));
 		
 	}
 }
