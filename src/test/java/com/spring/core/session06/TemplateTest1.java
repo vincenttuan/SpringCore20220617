@@ -1,5 +1,8 @@
 package com.spring.core.session06;
 
+import java.util.List;
+import java.util.Map;
+
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -16,6 +19,7 @@ public class TemplateTest1 {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringJDBCConfig.class);
 		
 		EmpDao empDao = ctx.getBean("empDao", EmpDao.class);
-		System.out.println(empDao.queryAll());
+		List<Map<String, Object>> emps = empDao.queryAll();
+		System.out.println(emps);
 	}
 }
