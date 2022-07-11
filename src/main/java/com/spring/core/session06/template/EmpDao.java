@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -37,6 +38,13 @@ public class EmpDao {
 			return emp;
 		};
 		List<Emp> emps = jdbcTemplate.query(sql, rowMapper);
+		return emps;
+	}
+	
+	// 多筆查詢 III
+	public List<Emp> queryAllEmps2() {
+		String sql = "select eid, ename, age, createtime from emp";
+		List<Emp> emps = jdbcTemplate.query(sql, new BeanPropertyRowMapper(Emp.class));
 		return emps;
 	}
 	
