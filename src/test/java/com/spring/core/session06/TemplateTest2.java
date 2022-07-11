@@ -1,5 +1,7 @@
 package com.spring.core.session06;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -20,9 +22,17 @@ public class TemplateTest2 {
 		// 測試單筆新增 I
 		//int rowcount = empDao.addOne1("test1", 18);
 		//System.out.println(rowcount);
-		// 測試單筆新增 II
-		int rowcount = empDao.addOne2("test2", 19);
-		System.out.println(rowcount);
 		
+		// 測試單筆新增 II
+		//int rowcount = empDao.addOne2("test2", 19);
+		//System.out.println(rowcount);
+		
+		// 測試批次新增 I
+		List<Object[]> rows = new ArrayList<>();
+		rows.add(new Object[] {"jo", 20});
+		rows.add(new Object[] {"Mark", 21});
+		rows.add(new Object[] {"Helen", 22});
+		int[] rowcounts = empDao.batchAdd1(rows);
+		System.out.println(Arrays.toString(rowcounts));
 	}
 }
