@@ -28,11 +28,21 @@ public class TemplateTest2 {
 		//System.out.println(rowcount);
 		
 		// 測試批次新增 I
+		/*
 		List<Object[]> rows = new ArrayList<>();
 		rows.add(new Object[] {"jo", 20});
 		rows.add(new Object[] {"Mark", 21});
 		rows.add(new Object[] {"Helen", 22});
 		int[] rowcounts = empDao.batchAdd1(rows);
 		System.out.println(Arrays.toString(rowcounts));
+		*/
+		// 測試批次新增 II
+		List<Emp> emps = new ArrayList<>();
+		emps.add(new Emp("Rose", 23));
+		emps.add(new Emp("Jack", 24));
+		int[] rowcounts = empDao.batchAdd2(emps);
+		System.out.println(Arrays.toString(rowcounts));
+		
+		
 	}
 }
