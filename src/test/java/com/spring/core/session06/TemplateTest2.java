@@ -38,8 +38,8 @@ public class TemplateTest2 {
 		*/
 		// 測試批次新增 II
 		List<Emp> emps = new ArrayList<>();
-		emps.add(new Emp("Rose", 23));
-		emps.add(new Emp("Jack", 24));
+		emps.add(new Emp("Rose", 25));
+		emps.add(new Emp("Jack", 18));
 		int[] rowcounts = empDao.batchAdd2(emps);
 		System.out.println(Arrays.toString(rowcounts));
 		
