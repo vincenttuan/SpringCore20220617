@@ -37,12 +37,15 @@ public class TemplateTest2 {
 		System.out.println(Arrays.toString(rowcounts));
 		*/
 		// 測試批次新增 II
+		/*
 		List<Emp> emps = new ArrayList<>();
 		emps.add(new Emp("Rose", 25));
 		emps.add(new Emp("Jack", 18));
 		int[] rowcounts = empDao.batchAdd2(emps);
 		System.out.println(Arrays.toString(rowcounts));
+		*/
 		
+		System.out.println(empDao.getEmpById(1));
 		
 	}
 }
