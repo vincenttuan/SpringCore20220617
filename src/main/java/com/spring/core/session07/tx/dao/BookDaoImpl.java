@@ -35,7 +35,15 @@ public class BookDaoImpl implements BookDao {
 	@Override
 	public Integer updateStock(Integer bid, Integer amount) throws InsufficientQuantity {
 		// 確認該書的最新庫存量
-		return null;
+		Integer new_amount = getStockAmount(bid);
+		if(new_amount <= 0) {
+			throw new InsufficientQuantity(String.format("此書號:%d 庫存不足, 目前數量:%d", bid, new_amount));
+		} else if(new_amount < amount) {
+			throw new InsufficientQuantity(String.format("此書號:%d 庫存不足, 目前數量:%d 欲購買數量:%d", bid, new_amount, amount));
+		}
+		// 修改庫存
+		String sql = "update stock set amount=amount-? where bid=?";
+		return jdbcTemplate.update(sql, amount, bid);
 	}
 
 	@Override
