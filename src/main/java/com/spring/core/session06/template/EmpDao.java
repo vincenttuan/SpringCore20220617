@@ -147,4 +147,17 @@ public class EmpDao {
 		return jdbcTemplate.query(sql, resultSetExtractor);
 	}
 	
+	// 同時新增二筆 Emp 資料
+	public int[] addTwoTx(String ename1, Integer age1, String ename2, Integer age2) {
+		int[] rowcount = new int[2];
+		
+		String sql = "insert into emp(ename, age) values(?, ?)";
+		rowcount[0] = jdbcTemplate.update(sql, ename1, age1);
+		rowcount[1] = jdbcTemplate.update(sql, ename2, age2);
+		
+		return rowcount;
+	}
+	
+	
+	
 }
