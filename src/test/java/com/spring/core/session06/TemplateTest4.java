@@ -15,7 +15,7 @@ public class TemplateTest4 {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("jdbc-config.xml");
 		EmpDao empDao = ctx.getBean("empDao", EmpDao.class);
 		
-		int[] rowcount = empDao.addTwoTx("Z03", 20, "Z01", 21);
+		int[] rowcount = empDao.addTwoTx("Z06", 20, "Z05", 21);
 		System.out.println(Arrays.toString(rowcount));
 	}
 }
