@@ -45,7 +45,8 @@ public class BookDaoImpl implements BookDao {
 		String sql = "update stock set amount=amount-? where bid=?";
 		return jdbcTemplate.update(sql, amount, bid);
 	}
-
+	
+	// 減去餘額
 	@Override
 	public Integer updateWallet(Integer wid, Integer money) throws InsufficientAmount {
 		// TODO Auto-generated method stub
