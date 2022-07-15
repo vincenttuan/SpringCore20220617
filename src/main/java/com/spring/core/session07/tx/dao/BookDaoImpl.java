@@ -57,7 +57,7 @@ public class BookDaoImpl implements BookDao {
 			throw new InsufficientAmount(String.format("錢包號碼:%d 餘額不足, 目前餘額:%d 預扣款金額:%d" , wid, new_money, money));
 		}
 		// 修改餘額
-		String sql = "update wallet set money=monet-? where wid=?";
+		String sql = "update wallet set money=money-? where wid=?";
 		return jdbcTemplate.update(sql, money, wid);
 	}
 	
