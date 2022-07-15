@@ -49,8 +49,16 @@ public class BookDaoImpl implements BookDao {
 	// 減去餘額
 	@Override
 	public Integer updateWallet(Integer wid, Integer money) throws InsufficientAmount {
-		// TODO Auto-generated method stub
-		return null;
+		// 先確認錢包裡的餘額
+		Integer new_money = getWalletMoney(wid);
+		if(new_money <= 0) {
+			throw new InsufficientAmount(String.format("錢包號碼:%d 餘額不足, 目前餘額:%d", wid, new_money));
+		} else if(new_money < money) {
+			throw new InsufficientAmount(String.format("錢包號碼:%d 餘額不足, 目前餘額:%d 預扣款金額:%d" , wid, new_money, money));
+		}
+		// 修改餘額
+		String sql = "update wallet set money=monet-? where wid=?";
+		return jdbcTemplate.update(sql, money, wid);
 	}
 	
 }
