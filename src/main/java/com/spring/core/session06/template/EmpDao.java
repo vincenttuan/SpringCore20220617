@@ -18,6 +18,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.spring.core.session06.entity.Emp;
+import com.spring.core.session06.entity.Job;
 
 // Dao: Data Access Object
 @Repository
@@ -129,8 +130,21 @@ public class EmpDao {
 		ResultSetExtractor<List<Emp>> resultSetExtractor = JdbcTemplateMapperFactory.newInstance()
 				.addKeys("eid")
 				.newResultSetExtractor(Emp.class);
+		
 		return jdbcTemplate.query(sql, resultSetExtractor);
 	}
 	
+	// Job多對一Emp 查詢
+	public List<Job> queryJobAndEmp() {
+		String sql = "select j.jid, j.jname, j.eid, " +
+					 "e.eid as emp_eid, e.ename as emp_ename, e.age as emp_age, e.createtime as emp_createtime " +
+					 "from job j left join emp e on e.eid = j.eid";
+		
+		ResultSetExtractor<List<Job>> resultSetExtractor = JdbcTemplateMapperFactory.newInstance()
+				.addKeys("jid")
+				.newResultSetExtractor(Job.class);
+		
+		return jdbcTemplate.query(sql, resultSetExtractor);
+	}
 	
 }
