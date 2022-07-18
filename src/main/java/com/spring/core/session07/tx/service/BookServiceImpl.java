@@ -33,7 +33,9 @@ public class BookServiceImpl implements BookService {
 	 * Isolation.READ_UNCOMMITTED 讀未提交: 髒讀 (針對欄位資料)
 	 * Isolation.READ_COMMITTED 讀已提交: 不可重複讀 (針對欄位資料)
 	 * Isolation.REPEATABLE_READ 可重複讀: 幻讀, 其他人不可以針對指定資料列RUD (針對欄位列)
-	 * Isolation.SERIALIZABLE 序列畫: 效能低, 消耗大, 但是可以簡單解決上面的問題(實務上不建議使用) 
+	 * Isolation.SERIALIZABLE 序列畫: 效能低, 消耗大, 但是可以簡單解決上面的問題(實務上不建議使用) (針對資料表)
+	 * 
+	 * 
 	 * */
 	@Override
 	public void buyOne(Integer wid, Integer bid) throws InsufficientAmount, InsufficientQuantity {
