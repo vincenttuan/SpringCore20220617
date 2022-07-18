@@ -23,11 +23,5 @@ public class BookServiceImpl implements BookService {
 		bookDao.updateWallet(wid, price);
 	}
 
-	@Override
-	public void buyMany(Integer wid, Integer... bids) throws InsufficientAmount, InsufficientQuantity {
-		for(Integer bid : bids) {
-			buyOne(wid, bid);
-		}
-	}
 	
 }
