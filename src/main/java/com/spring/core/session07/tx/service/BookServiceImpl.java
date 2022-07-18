@@ -41,6 +41,13 @@ public class BookServiceImpl implements BookService {
 	public void buyOne(Integer wid, Integer bid) throws InsufficientAmount, InsufficientQuantity {
 		// 減去一本庫存
 		bookDao.updateStock(bid, 1);
+		/*
+		try {
+			Thread.sleep(4000);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		*/
 		// 取得書籍價格
 		Integer price = bookDao.getPrice(bid);
 		// 減去錢包裡的錢
