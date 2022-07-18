@@ -16,7 +16,7 @@ public class BookServiceImpl implements BookService {
 	@Autowired
 	private BookDao bookDao;
 	
-	@Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.SERIALIZABLE)
+	@Transactional(propagation = Propagation.REQUIRES_NEW, timeout = 3)
 	/*
 	 * Propagation.REQUIRED (預設):如果有事務在運行, 當前方法就在該事物中運行
 	 *                            否則就啟動一個新的事務, 並在自己的事務中運行  
@@ -33,7 +33,7 @@ public class BookServiceImpl implements BookService {
 	 * Isolation.READ_UNCOMMITTED 讀未提交: 髒讀 (針對欄位資料)
 	 * Isolation.READ_COMMITTED 讀已提交: 不可重複讀 (針對欄位資料)
 	 * Isolation.REPEATABLE_READ 可重複讀: 幻讀, 其他人不可以針對指定資料列RUD (針對欄位列)
-	 * Isolation.SERIALIZABLE 序列畫: 效能低, 消耗大, 但是可以簡單解決上面的問題(實務上不建議使用) (針對資料表)
+	 * Isolation.SERIALIZABLE 序列化: 效能低, 消耗大, 但是可以簡單解決上面的問題(實務上不建議使用) (針對資料表)
 	 * 
 	 * 
 	 * */
