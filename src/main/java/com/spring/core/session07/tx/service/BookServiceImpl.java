@@ -2,6 +2,7 @@ package com.spring.core.session07.tx.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.core.session07.tx.dao.BookDao;
@@ -14,7 +15,13 @@ public class BookServiceImpl implements BookService {
 	@Autowired
 	private BookDao bookDao;
 	
-	@Transactional
+	@Transactional(propagation = Propagation.REQUIRES_NEW)
+	/*
+	 * Propagation.REQUIRED (預設):如果有事務在運行, 當前方法就在該事物中運行
+	 *                            否則就啟動一個新的事務, 並在自己的事務中運行  
+	 * Propagation.REQUIRES_NEW : 當前方法必須啟動新的事務, 並在自己的事務內運行, 
+	 *                            如果之前有事務正在運行, 就會將它掛起不用                             
+	 * */
 	@Override
 	public void buyOne(Integer wid, Integer bid) throws InsufficientAmount, InsufficientQuantity {
 		// 減去一本庫存
