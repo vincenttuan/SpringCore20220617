@@ -2,6 +2,7 @@ package com.spring.core.session07.tx.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.core.session07.tx.dao.BookDao;
 import com.spring.core.session07.tx.exception.InsufficientAmount;
@@ -13,6 +14,7 @@ public class BookServiceImpl implements BookService {
 	@Autowired
 	private BookDao bookDao;
 	
+	@Transactional
 	@Override
 	public void buyOne(Integer wid, Integer bid) throws InsufficientAmount, InsufficientQuantity {
 		// 減去一本庫存
